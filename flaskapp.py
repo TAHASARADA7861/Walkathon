@@ -4,6 +4,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 
+
 # Replace these values with your PostgreSQL credentials
 db_config = {
     "host": "localhost",
@@ -33,6 +34,17 @@ def execute_query(sql, data=None):
 # Initialize the database table
 execute_query(create_table_sql)
 
+# Route to Handle diffrent urls
+@app.route ('/Start-point')
+def start_point():
+    return render_template('QR.html')
+    @app.route ('/Mid-Point')
+def Mid_point():
+    return render_template('QR-mid.html')
+    @app.route ('/End-point')
+def End_point():
+    return render_template('QR-END.html')
+    
 # Route to handle QR code scans
 @app.route('/scan', methods=['POST'])
 def scan():
@@ -56,7 +68,7 @@ def QR():
     records = cursor.fetchall()
     connection.close()
 
-    return render_template('QR.html', records=records)
+    return render_template('QR.html','QR-mid.html','QR-END.html' records=records)
 
 if __name__ == '__main__':
     app.run(debug=True)
