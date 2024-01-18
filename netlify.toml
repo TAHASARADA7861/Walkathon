@@ -1,0 +1,3 @@
+[build]
+command = "pip install requirements.txt"
+publish = "C:\Users\zaina\OneDrive\Desktop\A NEW BEGINNING"

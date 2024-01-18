@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner App</title>
+</head>
+<body>
+    <h1>QR Code Scanner App</h1>
+    <form action="/scan" method="post">
+        <label for="qr_code_identifier">Your Name:</label>
+        <input type="text" id="qr_code_identifier" name="qr_code_identifier" required>
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <h2>Scan Records:</h2>
+    <ul>
+        {% for record in records %}
+            <li>{{ record[1] }} - {{ record[2] }}</li>
+        {% endfor %}
+    </ul>
+<div class="precredits">
+    Credits:-
+</div>
+    <footer class="Credits"><b>TAHA SARADA™</b></footer>
+    <style>
+        .Credits {
+            margin-bottom: 100px;
+    font-size: 90px; 
+            font-family:  Arial, Helvetica, sans-serif; 
+            background: linear-gradient(to right, #294d61, 
+                    #6da5c0, #0f969c, #1b3358); 
+                    -webkit-text-fill-color: transparent; 
+                    background-clip: text;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+        }
+
+        .precredits {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 150px;
+            color: rgb(94, 94, 105);
+        }
+    </style>
+</body>
+</html>
+
