@@ -1,5 +1,6 @@
 Flask==2.0.1
-psycopg2==2.9.2
+psycopg2-binary==2.9.2
+libpq-dev
 qrcode[pil]==7.2
 python-decouple==3.5
 Flask-WTF==0.15.1
