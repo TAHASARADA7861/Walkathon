@@ -37,7 +37,7 @@ execute_query(create_table_sql)
 # Route to Handle diffrent urls
 @app.route ('/Start-point')
 def start_point():
-    return render_template('QR.html')
+    return render_template('index.html')
     @app.route ('/Mid-Point')
 def Mid_point():
     return render_template('QR-mid.html')
